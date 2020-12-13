@@ -12,10 +12,10 @@ class Ball:
     def extras(self):
         extra_runs = 0
         if self.is_no_ball() or self.is_wide_ball():
-            print("NO BALL")
+            #print("NO BALL")
             extra_runs = 1
         if self.is_byes() or self.is_leg_byes():
-            print("BYEE")
+            #print("BYEE")
             extra_runs += self.extract_runs()
         return extra_runs
 

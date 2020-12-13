@@ -9,7 +9,7 @@ class Team:
         self.all_out = False
 
     def play_ball(self, ball):
-        print("Runs: " + str(ball.runs()) + "Extras: " + str(ball.extras()))
+        #print("Runs: " + str(ball.runs()) + "Extras: " + str(ball.extras()))
         self.total += ball.runs()
         self.extras += ball.extras()
         self.batting_manager.play_ball(ball)
@@ -19,16 +19,22 @@ class Team:
     def over_end(self):
         self.batting_manager.change_strike()
 
-    def scorecard(self, overs = 0, balls = 0):
+    def scorecard(self, over_string):
         out, playing, left = self.batting_manager.get_stats()
         print("name\t runs) \t fours \t sixes \t balls")
         for player in out:
-            print(str(player.name)+ "\t" + str(player.runs) + "\t" + str(player.fours) + "\t" + str(player.sixes) + "\t" + str(player.balls))
+            self.print_player_stats(player)
         for player in playing:
-            print(str(player.name)+ "\t" + str(player.runs) + "\t" + str(player.fours) + "\t" + str(player.sixes) + "\t" + str(player.balls))
+            self.print_player_stats(player, playing = True)
         for player in left:
-            print(str(player.name)+ "\t" + str(player.runs) + "\t" + str(player.fours) + "\t" + str(player.sixes) + "\t" + str(player.balls))
+            self.print_player_stats(player)
 
         print("TOTAL: " + str(self.total))
         print("EXTRAS: " + str(self.extras))
-        print("OVERS: " + str(overs) + "." + str(balls) )
+        print("OVERS: " + over_string)
+
+    def print_player_stats(self, player, playing= False):
+        name = player.name
+        if playing:
+            name = player.name + "*"
+        print(str(name)+ "\t" + str(player.runs) + "\t" + str(player.fours) + "\t" + str(player.sixes) + "\t" + str(player.balls))
