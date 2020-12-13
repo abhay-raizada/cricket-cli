@@ -13,6 +13,12 @@ Nb -- No ball\
 LB -- Leg Bye\
 B -- Bye
 
+Also Combinations like\
+1Nb \
+3BWd \
+Should Work
+
+
 
 ### Problem:
 Write a cricket scorecard that will show the score for a team along with score of each player.
