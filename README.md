@@ -4,6 +4,15 @@ cd into code root.
 
 `python cricket.py`
 
+### VALID INPUTS
+
+digits -- runs\
+W -- Wicket\
+Wd -- Wide\
+Nb -- No ball\
+LB -- Leg Bye\
+B -- Bye
+
 
 ### Problem:
 Write a cricket scorecard that will show the score for a team along with score of each player.
