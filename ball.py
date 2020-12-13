@@ -4,7 +4,7 @@ class Ball:
         self.ball_string = ball_string
 
     def player_runs(self):
-        if self.byes() or self.leg_byes():
+        if self.is_byes() or self.is_leg_byes():
             return 0
         else:
             return self.extract_runs()
@@ -12,8 +12,10 @@ class Ball:
     def extras(self):
         extra_runs = 0
         if self.is_no_ball() or self.is_wide_ball():
+            print("NO BALL")
             extra_runs = 1
-        if self.is_byes or self.is_leg_byes():
+        if self.is_byes() or self.is_leg_byes():
+            print("BYEE")
             extra_runs += self.extract_runs()
         return extra_runs
 
@@ -22,10 +24,10 @@ class Ball:
             return 0
         else:
             try:
-                extract_runs = int(self.ball_string)
+                extracted_runs = int(self.ball_string)
             except ValueError:
-                extract_runs = 0
-        return extract_runs
+                extracted_runs = 0
+        return extracted_runs
 
     def runs(self):
         return self.extras() + self.player_runs()
