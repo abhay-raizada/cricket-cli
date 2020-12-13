@@ -1,3 +1,10 @@
+### Usage
+
+cd into code root.
+
+`python cricket.py`
+
+
 ### Problem:
 Write a cricket scorecard that will show the score for a team along with score of each player.
 You will be given the number of players in each team, the number of overs and their batting
